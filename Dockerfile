@@ -1,5 +1,6 @@
 FROM ubuntu
 
+# warning: apt-get install should run with apt-get update, if not, we'll find docker error code 100.
 RUN apt-get update && \
     apt-get install -y openssh-server && \
     apt-get install -y daemontools
