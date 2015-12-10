@@ -1,13 +1,10 @@
 FROM ubuntu
 
-# MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
-
-RUN apt-get update
-RUN apt-get install -y openssh-server
-RUN apt-get install -y daemontools
+RUN apt-get update && \
+    apt-get install -y openssh-server && \
+    apt-get install -y daemontools
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
-
 
 #ssh
 RUN mkdir /var/run/sshd
